@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оголошення</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Список оголошень</h1>
+        <!-- Форма для пошуку та фільтрації -->
+        <form method="GET" action="{% url 'listing_list' %}" class="search-form">
+            <div class="form-row">
+                <input type="text" name="search" placeholder="Пошук оголошень..." value="{{ request.GET.search }}"
+                    class="input-text">
+                <select name="category" class="select-dropdown">
+                    <option value="">Усі категорії</option>
+                    {% for category in categories %}
+                    <option value="{{ category.id }}" {% if selected_category|default:''==category.id|stringformat:"s"
+                        %}selected>
+                        {{ category.name }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="btn">Пошук</button>
+        </form>
+
+        <!-- Список оголошень -->
+        <ul class="listing-list">
+            {% for listing in listings %}
+            <li class="listing">
+                {% if listing.image %}
+                <img src="{{ listing.image.url }}" alt="Image for {{ listing.title }}" class="listing-image">
+                {% else %}
+                <img src="https://via.placeholder.com/100" alt="No image available" class="listing-image">
+                {% endif %}
+                <div class="listing-info">
+                    <a href="{% url 'listing_detail' pk=listing.pk %}" class="listing-title">{{ listing.title }}</a>
+                    <p class="listing-description">{{ listing.description|slice:":100" }}...</p>
+                    <p class="listing-price">Ціна: {{ listing.price }} грн</p>
+                </div>
+            </li>
+            {% empty %}
+            <li>Оголошень поки що немає.</li>
+            {% endfor %}
+        </ul>
+
+        <!-- Посилання для повернення -->
+        <p><a href="{% url 'dashboard' %}" class="btn">Повернутися на головну</a></p>
+    </div>
+</body>
+
+</html>

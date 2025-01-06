@@ -1,0 +1,229 @@
+/* Базові стилі */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Контейнер для сторінок */
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+/* Заголовки */
+h1,
+h2,
+h3 {
+    color: #6a0dad;
+    margin-bottom: 20px;
+}
+
+/* Форми */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input,
+textarea,
+select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Кнопки */
+button {
+    background-color: #6a0dad;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #5a0cb0;
+    transform: scale(1.05);
+}
+
+/* Посилання */
+a {
+    color: #6a0dad;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+a:hover {
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Таблиці */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #6a0dad;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Центрування тексту для пустого стану */
+td[colspan] {
+    text-align: center;
+    font-style: italic;
+    color: #555;
+}
+
+td a {
+    margin: 5px 5px;
+}
+
+.listing img {
+    width: 300px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Панель користувача */
+.user-panel-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.user-panel-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Кнопки-посилання */
+a.btn {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #6a0dad;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+a.btn:hover {
+    background-color: white;
+    transform: scale(1.05);
+}
+
+/* Кнопки у формах */
+form .btn {
+    width: 100%;
+}
+
+/* Стилізація тільки для сторінки створення оголошень */
+.create-listing-page .container {
+    text-align: left;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.create-listing-page .create-listing-form {
+    align-items: flex-start;
+}
+
+.create-listing-page form button {
+    width: auto;
+    align-self: flex-start;
+    padding: 8px 12px;
+    font-size: 16px;
+}
+
+/* Стилізація для сторінки видалення оголошень */
+.delete-listing-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.1);/
+}
+
+.delete-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Кнопка для видалення */
+.delete-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.delete-button:hover {
+    background-color: darkred;
+    transform: scale(1.05);
+}
+
+/* Посилання для повернення */
+a {
+    display: block;
+    margin-top: 15px;
+    color: #6a0dad;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+a:hover {
+    color: #5a0cb0;
+    transform: scale(1.05);
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель користувача</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <div class="container user-panel-container">
+        <h2>Ласкаво просимо, {{ user.username }}!</h2>
+        <div class="user-panel-buttons">
+            <a href="{% url 'listing_list' %}" class="btn">Перегляд оголошень</a>
+            <a href="{% url 'my_listings' %}" class="btn">Мої оголошення</a>
+            <form method="POST" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="btn">Вийти</button>
+            </form>
+        </div>
+        <p>Оберіть дію з меню вище.</p>
+    </div>
+</body>
+
+</html>

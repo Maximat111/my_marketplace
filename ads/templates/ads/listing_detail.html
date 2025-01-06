@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ listing.title }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        .listing-detail img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            display: block;
+            margin: 0 auto 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>{{ listing.title }}</h1>
+        <div class="listing-detail">
+            {% if listing.image %}
+            <img src="{{ listing.image.url }}" alt="Image for {{ listing.title }}">
+            {% else %}
+            <img src="https://via.placeholder.com/300" alt="No image available">
+            {% endif %}
+            <p>{{ listing.description }}</p>
+            <p><strong>Ціна:</strong> {{ listing.price }} грн</p>
+            <p><strong>Дата створення:</strong> {{ listing.created_at }}</p>
+            <h2>Контактна інформація</h2>
+            <p><strong>Телефон:</strong> {{ listing.phone_number }}</p>
+            <p><strong>Email:</strong> {{ listing.email }}</a></p>
+        </div>
+        <div class="user-panel-buttons">
+            <a href="{% url 'listing_list' %}" class='btn'>Повернутися до списку оголошень</a>
+            <a href="{% url 'my_listings' %}" class='btn'>Перейти до своїх оголошень</a>
+            <a href="{% url 'dashboard' %}" class='btn'>Повернутися на головну</a>
+        </div>
+    </div>
+</body>
+
+</html>

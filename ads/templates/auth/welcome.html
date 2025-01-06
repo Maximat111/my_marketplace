@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ласкаво просимо!</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Ласкаво просимо до Marketplace</h2>
+        <p>
+            <a href="{% url 'login' %}">Увійти</a> або
+            <a href="{% url 'register' %}">Зареєструватись</a>, щоб переглянути оголошення.
+        </p>
+    </div>
+</body>
+
+</html>
